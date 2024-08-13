@@ -1,0 +1,5 @@
+[data]
+deployerAddress = "0xfAB329393Cf587Eafc3Bb733ce3F9E56B01788b6"
+
+[data.polygon]
+explorer = "https://amoy.polygonscan.com"

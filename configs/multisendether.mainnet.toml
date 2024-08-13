@@ -1,0 +1,15 @@
+[data]
+deployerAddress = ""
+totalAmount = ""
+
+[data.polygon]
+explorer = "https://amoy.polygonscan.com"
+multisendAddress = ""
+
+[[data.matic.recipients]]
+address = ""
+ethvalue = ""
+
+[[data.matic.recipients]]
+address = ""
+ethvalue = ""

@@ -1,0 +1,15 @@
+[data]
+deployerAddress = ""
+totalAmount = ""
+
+[data.polygon]
+explorer = "https://polygonscan.com"
+multisendAddress = ""
+
+[[data.erc20.recipients]]
+address = ""
+ethvalue = ""
+
+[[data.erc20.recipients]]
+address = ""
+ethvalue = ""

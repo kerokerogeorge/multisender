@@ -1,0 +1,16 @@
+[data]
+deployerAddress = "0xfAB329393Cf587Eafc3Bb733ce3F9E56B01788b6"
+totalAmount = "3"
+
+[data.polygon]
+explorer = "https://amoy.polygonscan.com"
+multisendAddress = "0xCa7e5Ebf205271c5a1dfe37F89bC8C67f395bC91"
+tokenContractAddress = "0xEf65A25787C958C45ce2652475660877878d64Ee" # ERC20 token contract address on Polygon testnet (ROND)
+
+[[data.erc20.recipients]]
+address = "0x3389F460CDD2198d2D3124B33b936F513C1540f7"
+ethvalue = "1"
+
+[[data.erc20.recipients]]
+address = "0x16F2AbF3b5fE2cEBE725255E54062906b405c16a"
+ethvalue = "2"

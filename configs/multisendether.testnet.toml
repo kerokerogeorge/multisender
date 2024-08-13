@@ -1,0 +1,15 @@
+[data]
+deployerAddress = "0xfAB329393Cf587Eafc3Bb733ce3F9E56B01788b6"
+totalAmount = "0.3"
+
+[data.polygon]
+explorer = "https://amoy.polygonscan.com"
+multisendAddress = "0xCa7e5Ebf205271c5a1dfe37F89bC8C67f395bC91"
+
+[[data.matic.recipients]]
+address = "0x3389F460CDD2198d2D3124B33b936F513C1540f7"
+ethvalue = "0.1"
+
+[[data.matic.recipients]]
+address = "0x16F2AbF3b5fE2cEBE725255E54062906b405c16a"
+ethvalue = "0.2"
