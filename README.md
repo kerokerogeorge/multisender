@@ -13,6 +13,12 @@ recommended version
 $ npm install
 ```
 
+compile
+
+```
+$ npx hardhat compile
+```
+
 - create .env
 
 Set the PrivateKey and RPC urls
@@ -25,10 +31,10 @@ $ cp .env.sample .env
 
 1. Set config values
 
-   - deployerAddress: address of the deployer
-   - explorer: explorer url
+- deployerAddress: address of the deployer
+- explorer: explorer url
 
-1. Execute javascript file
+2. Execute javascript file
 
 ```bash
 $ npx hardhat run scripts/001_deploy.js --network testnet
@@ -51,21 +57,21 @@ result
 1. Configure the values in the multisendether.{env}.toml file
 
 ```toml
-    [data]
-    deployerAddress = "0xfAB329393Cf587Eafc3Bb733ce3F9E56B01788b6"
-    totalAmount = "0.3" // total amount of the ethvalue in data.matic.recipients array
+[data]
+deployerAddress = "0xfAB329393Cf587Eafc3Bb733ce3F9E56B01788b6"
+totalAmount = "0.3" # total amount of the ethvalue in data.matic.recipients array
 
-    [data.polygon]
-    explorer = "https://amoy.polygonscan.com/"
-    multisendAddress = "0x908CB22757181f7da59B7e1D73e06E491b4e576B"
+[data.polygon]
+explorer = "https://amoy.polygonscan.com/"
+multisendAddress = "0x908CB22757181f7da59B7e1D73e06E491b4e576B"
 
-    [[data.matic.recipients]]
-    address = "0x3389F460CDD2198d2D3124B33b936F513C1540f7"
-    ethvalue = "0.1"
+[[data.matic.recipients]]
+address = "0x3389F460CDD2198d2D3124B33b936F513C1540f7"
+ethvalue = "0.1"
 
-    [[data.matic.recipients]]
-    address = "0x16F2AbF3b5fE2cEBE725255E54062906b405c16a"
-    ethvalue = "0.2"
+[[data.matic.recipients]]
+address = "0x16F2AbF3b5fE2cEBE725255E54062906b405c16a"
+ethvalue = "0.2"
 ```
 
 2.Execute javascript file
@@ -91,22 +97,22 @@ result
 1. Configure the values in the multisendtoken.{env}.toml file
 
 ```toml
-    [data]
-    deployerAddress = "0xfAB329393Cf587Eafc3Bb733ce3F9E56B01788b6"
-    totalAmount = "3"
+[data]
+deployerAddress = "0xfAB329393Cf587Eafc3Bb733ce3F9E56B01788b6"
+totalAmount = "3"
 
-    [data.polygon]
-    explorer = "https://amoy.polygonscan.com"
-    multisendAddress = "0xCa7e5Ebf205271c5a1dfe37F89bC8C67f395bC91"
-    tokenContractAddress = "0xEf65A25787C958C45ce2652475660877878d64Ee"
+[data.polygon]
+explorer = "https://amoy.polygonscan.com"
+multisendAddress = "0xCa7e5Ebf205271c5a1dfe37F89bC8C67f395bC91"
+tokenContractAddress = "0xEf65A25787C958C45ce2652475660877878d64Ee" # ERC20 token contract address on Polygon testnet (ROND)
 
-    [[data.erc20.recipients]]
-    address = "0x3389F460CDD2198d2D3124B33b936F513C1540f7"
-    ethvalue = "1"
+[[data.erc20.recipients]]
+address = "0x3389F460CDD2198d2D3124B33b936F513C1540f7"
+ethvalue = "1"
 
-    [[data.erc20.recipients]]
-    address = "0x16F2AbF3b5fE2cEBE725255E54062906b405c16a"
-    ethvalue = "2"
+[[data.erc20.recipients]]
+address = "0x16F2AbF3b5fE2cEBE725255E54062906b405c16a"
+ethvalue = "2"
 ```
 
 2. Execute javascript file
