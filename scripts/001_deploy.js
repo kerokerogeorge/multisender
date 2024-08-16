@@ -4,16 +4,14 @@ const fs = require('fs');
 const path = require('path');
 
 const network = process.env.HARDHAT_NETWORK;
+const prvKey = network == 'testnet' ? process.env.PRIVATE_KEY_TESTNET : process.env.PRIVATE_KEY_MAINNET;
 
 const configPath = network == 'testnet' ? path.resolve("configs", './deploy.testnet.toml') : path.resolve("configs", './deploy.mainnet.toml')
 const config = toml.parse(fs.readFileSync(configPath, 'utf8'));
 
 async function main() {
-  const deployerAddr = config.data.deployerAddress;
-  
-  const deployer = await ethers.getSigner(deployerAddr);
-
-  console.log("/*\n"," * ===================================================================================\n", ` * Deploying contracts with the account: ${deployer.address}`);
+  const account = web3.eth.accounts.privateKeyToAccount(prvKey);
+  console.log("/*\n"," * ===================================================================================\n", ` * Deploying contracts with the account: ${account.address}`);
   const multisendContract = await ethers.deployContract("Multisend");
   await multisendContract.waitForDeployment();
 

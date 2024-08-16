@@ -5,6 +5,7 @@ const path = require('path');
 const Web3 = require("web3");
 
 const network = process.env.HARDHAT_NETWORK;
+const prvKey = network == 'testnet' ? process.env.PRIVATE_KEY_TESTNET : process.env.PRIVATE_KEY_MAINNET;
 
 const configPath = network == 'testnet' ? path.resolve("configs", './multisendether.testnet.toml') : path.resolve("configs", './multisendether.mainnet.toml')
 const config = toml.parse(fs.readFileSync(configPath, 'utf8'));
@@ -16,8 +17,8 @@ async function main() {
   const Multisend = await ethers.getContractFactory("Multisend");
   const multisend = await Multisend.attach(multisendAddress)
 
-  const deployerAddr = config.data.deployerAddress;
-  console.log("/*\n"," * ===================================================================================\n", ` * Account: ${deployerAddr}`);
+  const account = web3.eth.accounts.privateKeyToAccount(prvKey);
+  console.log("/*\n"," * ===================================================================================\n", ` * Account: ${account.address}`);
 
   const recipients = config.data.matic.recipients.map(recipient => recipient.address);
   const values = config.data.matic.recipients.map(recipient => web3.utils.toWei(recipient.ethvalue, 'ether'));
